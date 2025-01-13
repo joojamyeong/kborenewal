@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            position: relative;
+            padding: 100px;
+            box-sizing: border-box;
+        }
+        .wrap>div{
+            width: 250px;
+            height: 300px;
+            border-radius: 10px;
+            position: absolute;
+            box-sizing: border-box;
+        }
+        .wrap>div:nth-child(1){
+            animation: ani1 infinite 5s;
+            /*transform: perspective() rotateY(0); z-index: 100;*/
+            perspective-origin: center;
+        }
+        img{
+            width: 100%; height: 100%;
+        }
+        /*
+        .wrap:hover div:nth-child(1){
+            transform: rotateY(180deg); z-index: 0;
+        }
+        .wrap:hover div:nth-child(2){
+            transform: rotateY(0); z-index: 100;
+        }
+            */
+        .wrap>div:nth-child(2){
+            background-color: lightgray;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0px;
+            animation: ani2 infinite 5s;
+            /*transform: rotateY(180deg); z-index: 0;*/
+            perspective-origin: center;
+        }
+        button{
+            border: 2px solid #000;
+            background-color: transparent;
+            padding: 5px 20px;
+        }
+        .wrap>div:nth-child(2)>img{height: 30%;}
+        @keyframes ani1 {
+            0%{transform: perspective(1000px) rotateY(0); z-index: 100;}
+            50%{transform: perspective(1000px) rotateY(180deg); z-index: 0;}
+            100%{transform: perspective(1000px) rotateY(360deg); z-index: 100;}
+        }
+        @keyframes ani2 {
+            0%{transform: perspective(1000px) rotateY(-180deg); z-index: 0;}
+            50%{transform: perspective(1000px) rotateY(0); z-index: 100;}
+            100%{transform: perspective(1000px) rotateY(180deg); z-index: 0;}
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div>
+            <img src="../t50_register_detail_091.jpg" alt="">
+        </div>
+        <div>
+            <img src="../로고/엘지트윈스.svg" alt="">
+            <h4>[PRO-SPECS] 2024 LG트윈스 어센틱 유광점퍼</h4>
+            <h5>249,000원</h5>
+            <button>사러가기</button>
+        </div>
+    </div>
+</body>
+</html>
